@@ -29,10 +29,11 @@ namespace sK8.Renderware.Arena
 
     internal static class ArenaFileHeader
     {
-        //magic number
+        //Magic Number
         internal static readonly uint Prefix = 2303874868;
         //body is EPlatform
         internal static readonly uint Suffix = 218765834;
+        //End Magic Number
 
         //File Header
         internal static readonly bool IsBigEndian = true;
@@ -64,12 +65,13 @@ namespace sK8.Renderware.Arena
         private uint Id;
         private uint NumEntries = 0;
         private uint NumUsed = 0;
-        private uint Alignment; //Every new object should be serialized starting at a multiple of this value. Wii uses 32, Ps3 and Xbox use 16.
-                                //However this doesnt seem to be a strict rule, however multiples of 4 are only ever used.
+        private uint Alignment; //Every new memory resource in the resource descriptor should be serialized starting at a multiple of this value. Wii uses 32, Ps3 and Xbox use 16.
+                                      //Each object or entry within that resource is then aligned based on that resource's alignment value.
+                                      //Each entry within an object is then aligned based on that entry's alignment in the arena dictionary entry
         private uint DictStart;
         private uint Sections;
 
-        private BaseResourceDescriptors ResourceDescriptor;
+        private BaseResourceDescriptors ResourceDescriptor; //Main Memory of this is the header plus rw objects plus dictionary and subreference records
         private BaseResourceDescriptors ResourcesUsed; //Main Memory of this is the Arena Header
 
         private ArenaSectionManifiest SectionManifiest = new ArenaSectionManifiest();
