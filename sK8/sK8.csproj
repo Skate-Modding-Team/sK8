@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <IsTrimmable>True</IsTrimmable>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <IsTrimmable>True</IsTrimmable>
+    <IsAotCompatible>True</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Memcard\" />
+    <Folder Include="ICE\" />
+    <Folder Include="Lion\" />
+    <Folder Include="Assman\" />
+    <Folder Include="Renderengine\" />
+    <Folder Include="Ropa\" />
+    <Folder Include="Skatepark\" />
+    <Folder Include="Xml\" />
+    <Folder Include="Renderware\Collision\" />
+    <Folder Include="Renderware\Bigfile\" />
+    <Folder Include="Renderware\EABigfile\" />
+    <Folder Include="Renderware\Movie\" />
+  </ItemGroup>
+
+</Project>
