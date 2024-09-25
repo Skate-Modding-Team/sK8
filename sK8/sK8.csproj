@@ -22,7 +22,7 @@
     <Folder Include="ICE\" />
     <Folder Include="Lion\" />
     <Folder Include="Assman\" />
-    <Folder Include="Renderengine\" />
+    <Folder Include="Renderengine\Xenon\" />
     <Folder Include="Ropa\" />
     <Folder Include="Skatepark\" />
     <Folder Include="Xml\" />
